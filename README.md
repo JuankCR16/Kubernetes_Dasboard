@@ -1,7 +1,3 @@
----
-icon: material/atom
----
-
 # Configure Kubernetes Dashboard
 
 Dashboard is a web-based Kubernetes user interface. You can use Dashboard to deploy containerized applications to a Kubernetes cluster, troubleshoot your containerized application, and manage the cluster resources.
