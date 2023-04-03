@@ -17,7 +17,7 @@ Dashboard is a web-based Kubernetes user interface. You can use Dashboard to dep
 #### Step 1: Clone repo with config files
 ``` bash linenums="1"
 # If you already cloned the repo, remember to always check changes for repo "carlos/mcmp-config-files" by doing "git pull"
-git clone git@github.kyndryl.net:carlos/mcmp-config-files.git
+git clone https://github.com/JuankCR16/Kubernetes_Dasboard.git
 ```
 
 #### Step 2: Create metric server resources
@@ -25,10 +25,6 @@ git clone git@github.kyndryl.net:carlos/mcmp-config-files.git
 Create metric server resources to enable “top” example: `kubectl top pod -A`
 
 ``` bash linenums="1"
-# Clone repository instruction in (https://github.kyndryl.net/multicloud/developer-startup#clone-repo-with-config-files)
-# If you already cloned the repo, remember to always check changes for repo "carlos/mcmp-config-files" by doing "git pull"
-cd ~/MCMP/github.kyndryl.net/carlos/mcmp-config-files
-
 # Update resources for metrics server components
 kubectl apply -f ./metrics-server-components.yaml
 
@@ -91,12 +87,8 @@ kubectl get all -n kubernetes-dashboard
 #### Step 5: Configure admin user:
 
 ``` bash linenums="1"
-# Clone repository instruction in (https://github.kyndryl.net/multicloud/developer-startup#clone-repo-with-config-files)
-# If you already cloned the repo, remember to always check changes for repo "carlos/mcmp-config-files" by doing "git pull"
-cd ~/MCMP/github.kyndryl.net/carlos/mcmp-config-files
-
 # Update resources for admin user
-kubectl apply -f ./kubernetes/kubernetes-dashboard/admin-user.yaml
+kubectl apply -f ./admin-user.yaml
 # serviceaccount/admin-user created
 ```
 
@@ -135,13 +127,9 @@ kubectl proxy
 #### Uninstall (Optional)
 1. Remove metrics server resources:
     ``` bash linenums="1"
-    # Clone repository instruction in (https://github.kyndryl.net/multicloud/developer-startup#clone-repo-with-config-files)
-    # If you already cloned the repo, remember to always check changes for repo "carlos/mcmp-config-files" by doing "git pull"
-    cd ~/MCMP/github.kyndryl.net/carlos/mcmp-config-files
-
     # Delete resources for metrics server components
     # This yaml is created from https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
-    kubectl delete -f ./kubernetes/kubernetes-dashboard/metrics-server-components.yaml
+    kubectl delete -f ./metrics-server-components.yaml
     ```
 
 2. Remove kubernetes dashboard resources:
